@@ -202,7 +202,7 @@ header{
 }
 
 
-.start:hover, .exit_home:hover,
+.logo_home:hover, .exit_home:hover,
 .adicionar_home:hover, .img_home:hover,
 i:hover{
     cursor: pointer;
