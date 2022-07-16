@@ -1,0 +1,209 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.logincontainer{
+    width: 100vw;
+    height: 100vh;
+    background: #E5E5E5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_login{
+    display: flex;
+    max-width: 450px;
+    max-height: 410px;
+    border: 1px solid #212121;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.logo_login{
+    height:60px;
+    width: 235px;   
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#icone_login{
+    font-size: 40px;
+    margin-right: 5px;
+}
+
+.span_login{
+    font-size: 40px;
+    letter-spacing: 5px;
+    font-weight: 900;
+}
+
+#input1{
+    margin-bottom:54px;
+    padding: 10px;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#input2{
+    margin-bottom: 32px;
+    padding: 10px;
+    outline: none;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.input, button{
+    width: 100%;
+    height: 40px;
+}
+
+label{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size:14px;
+    font-weight: 600;
+    color: #212121;
+}
+
+.button_login{
+    background: #212121;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size:14px;
+    font-weight: 600;
+    border: none;
+}
+
+.button_login:hover{
+    cursor: pointer;
+    letter-spacing: 1px;
+    opacity: .95;
+    box-shadow: 0px 1px 10px black;
+    border-radius: 5px;
+}
+
+
+
+/*HOME*/
+
+.container_home{
+    width: 100vw;
+    height: 100vh;
+    background-color: #E5E5E5;
+    padding: 0 100px 0 100px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-top: 30px;
+}
+
+#icone_logo{
+    margin-right: 5px;
+    font-size: 30px;
+}
+
+.span_home{
+    font-weight: 900;
+    font-size: 30px;
+    letter-spacing: 5px;
+}
+
+.exit_home{
+    font-weight: 800;
+}
+
+.start{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.adicionar_home, .title_navers{
+    max-width: 150px;
+}
+
+.adicionar_home{
+    background-color: black;
+    color: #E5E5E5;
+    height: 30px;
+}
+
+.navers_home{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img_home{
+    position: relative;
+    max-width: 281px;
+    height: 280px;
+    margin-bottom: 5px;
+}
+
+.img_home > img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.view_details{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.view{
+    font-size: larger;
+    font-weight: 800;
+    color: #E5E5E5;
+}
+
+.view_details:hover{
+    opacity: .8;
+}
+
+.view:hover{
+    letter-spacing: 2px;
+    text-decoration: dashed;
+}
+
+
+.info_navers{
+    margin-bottom: 5px;
+}
+
+.name{
+    margin-bottom: 5px;
+}
+
+
+.start:hover, .exit_home:hover,
+.adicionar_home:hover, .img_home:hover,
+i:hover{
+    cursor: pointer;
+}
