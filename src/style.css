@@ -95,7 +95,7 @@ label{
 
 /*HOME*/
 
-.container_home{
+.container{
     width: 100vw;
     height: 100vh;
     background-color: #E5E5E5;
@@ -207,3 +207,108 @@ header{
 i:hover{
     cursor: pointer;
 }
+
+
+
+/* ABERTURA DO MODAL*/
+.open_modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color:rgba(0, 0, 0, .8);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    position: relative;
+    width: 600px;
+    min-height: 160px;
+    background-color: white;
+}
+
+
+/*MODAL - BOTAO SAIR*/
+#exit_modal{
+    position: absolute;
+    right: 4%;
+    top: 5%;
+    z-index: 10000;
+}
+
+
+/*MODAL - DETALHES*/
+.modal_details{
+    display: flex;
+    width: 100%;
+    height: 400px;
+}
+
+.img_modal, .info_modal{
+    flex: 1;
+}
+
+.img_modal{
+    object-fit: contain
+}
+
+.info_modal{
+    padding: 35px 20px 0 20px;
+}
+
+.info_modal > p{
+    margin: 10px 0 25px 0;
+    font-size: 12px;
+    flex-wrap: wrap;
+    width: 265px;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+
+}
+
+#Projet{
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+
+/*MODAL - EXCLUIR*/
+.excluir_modal{
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 30px 20px 10px 30px;
+}
+
+.options_excluir{
+    margin: 20px 0px 0px 40%;
+}
+.excluir h2{
+    margin-bottom: 20px;
+}
+.excluir button{
+    width: 150px;
+    height: 30px;
+    
+}
+
+.button_cancelar{
+    background: #E5E5E5;
+    color: black;
+    border: 1px solid black;
+}
+
+.button_exluir{background-color: black;}
+
+
+/*MODAL- EXCLUIDO*/
+.info_excluido{
+    display: none;
+    padding: 30px;
+}
+
+.info_excluido h2{margin-bottom: 25px;}
