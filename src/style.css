@@ -306,9 +306,67 @@ i:hover{
 
 
 /*MODAL- EXCLUIDO*/
-.info_excluido{
+.info_naver{
     display: none;
     padding: 30px;
 }
 
-.info_excluido h2{margin-bottom: 25px;}
+.info_naver h2{margin-bottom: 25px;}
+
+
+
+/*Adição de Navers*/
+
+
+.main_naver{
+    width: 600px;
+    margin: auto;
+}
+
+.title_naver{
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.title_naver span{
+    margin-right: 10px;
+}
+
+.input_naver{
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
+.input_dados{
+    flex: 1;
+}
+
+.input_dados input{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #424242;
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+
+.input_margem{margin-right: 30px;}
+
+.main_naver button{
+    background-color: black;
+    width: 170px;
+    height: 40px;
+    margin-left: calc(600px - 170px);
+}
+
+.info_add, .info_edit{display: block;}
