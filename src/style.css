@@ -5,6 +5,7 @@
 }
 body{
     font-family: 'Courier New', Courier, monospace;
+    background-color: #E5E5E5;
 }
 
 .logincontainer{
@@ -96,10 +97,10 @@ label{
 /*HOME*/
 
 .container{
-    width: 100vw;
+    max-width: 80vw;
     height: 100vh;
     background-color: #E5E5E5;
-    padding: 0 100px 0 100px;
+    margin: auto;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -111,7 +112,10 @@ header{
     margin-bottom: 40px;
     padding-top: 30px;
 }
-
+a{
+    text-decoration: none;
+    color: black;
+}
 #icone_logo{
     margin-right: 5px;
     font-size: 30px;
@@ -141,17 +145,21 @@ header{
     background-color: black;
     color: #E5E5E5;
     height: 30px;
+    padding: 5px;
 }
 
 .navers_home{
     display: flex;
+    max-width: 100%;
     justify-content: space-between;
 }
-
+.navers{
+    padding: 5px;
+}
 .img_home{
     position: relative;
     max-width: 281px;
-    height: 280px;
+    max-height: 280px;
     margin-bottom: 5px;
 }
 
@@ -167,8 +175,6 @@ header{
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100%;
-    height: 100%;
     background-color: black;
     z-index: 10;
     display: flex;
@@ -222,6 +228,7 @@ i:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .modal{
@@ -243,9 +250,9 @@ i:hover{
 
 /*MODAL - DETALHES*/
 .modal_details{
-    display: flex;
     width: 100%;
     height: 400px;
+    display: none;
 }
 
 .img_modal, .info_modal{
@@ -267,7 +274,6 @@ i:hover{
     width: 265px;
     overflow-wrap: break-word;
     overflow-y: auto;
-
 }
 
 #Projet{
@@ -285,21 +291,22 @@ i:hover{
 }
 
 .options_excluir{
+    display: flex;
     margin: 20px 0px 0px 40%;
 }
-.excluir h2{
+.excluir_modal h2{
     margin-bottom: 20px;
 }
-.excluir button{
+.options_excluir button{
     width: 150px;
     height: 30px;
-    
 }
 
 .button_cancelar{
     background: #E5E5E5;
     color: black;
     border: 1px solid black;
+    margin-right: 10px;
 }
 
 .button_exluir{background-color: black;}
@@ -370,3 +377,5 @@ input[type=number] {
 }
 
 .info_add, .info_edit{display: block;}
+
+.none{display: none;}

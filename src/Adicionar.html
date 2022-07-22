@@ -12,18 +12,20 @@
 <body>
    <Section class="container">
     <header>
-        <div class="logo_home">
-            <i class="fa-brands fa-evernote" id="icone_logo"></i>
-            <span class="span_home">Navers</span>
-        </div>
-        <div class="exit_home">Sair</div>
+        <a href="home.html">
+            <div class="logo_home">
+                <i class="fa-brands fa-evernote" id="icone_logo"></i>
+                <span class="span_home">Navers</span>
+            </div>
+       </a> 
+       <a href="login.html"><div class="exit_home">Sair</div></a>
     </header>
 
     <div class="main_naver">
         <div class="title_naver">
-            <span class="material-symbols-outlined">
+            <a href="home.html"><span class="material-symbols-outlined">
                 keyboard_return
-                </span>
+            </span></a>
             <h1>Adicionar Naver</h1>
         </div>
         <form action="">
@@ -60,7 +62,7 @@
                     <input type="url" class="url_naver" placeholder="URL da foto do Naver" required>
                 </div>
             </div>
-            <button class="button_login">Salvar</button>
+            <button class="button_login add">Salvar</button>
         </form>
     </div>
 
@@ -75,6 +77,16 @@
         </div>
     </div>
    </div>
-    
+   <script src="script.js"></script>
+   <script>
+        $add.addEventListener("click", (event) =>{
+            event.preventDefault()
+            document.querySelector(".open_modal").style.display="flex"
+        })
+        document.querySelector("#exit_modal").addEventListener("click", ()=> {
+            document.querySelector(".open_modal").style.display="none"
+        })
+
+   </script>
 </body>
 </html>
