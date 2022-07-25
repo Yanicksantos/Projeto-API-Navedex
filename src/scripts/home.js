@@ -10,6 +10,12 @@ const $cancelar = document.querySelector(".button_cancelar")
 const $button_exluir = document.querySelector(".button_exluir")
 const $add = document.querySelector(".add")
 
+const api = {
+    url:"https://navedex-api.herokuapp.com/v1/users/login",
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1MzJiMTJjLTRmNzgtNGZjOS04Y2ExLTgwNjQ4NzE0Yjk3NSIsImVtYWlsIjoieWFuaWNrdGVzdGVAYXBpLmNvbSIsImlhdCI6MTY1Nzg5ODQyN30.4e1gYOAxH3DhVQr1GCqaSUEn7pe0ON1gZP6BEVnz_QQ",
+}
+
+
 document.onclick = function(event) {
     if (event.target == $open_modal) {
       $open_modal.style.display = "none";

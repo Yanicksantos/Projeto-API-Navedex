@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c2eaa1e07a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>LOGIN NAVERS</title>
 </head>
 <body>
+    <div class="alert">
+        <div class="alet_container">
+            <i class="material-icons" style="font-size:38px;color:red">error</i>
+            <span class="alert_span"></span>
+        </div>
+    </div>
     <section class="logincontainer">
         <div class="main_login">
             <div class="logo_login">
@@ -16,14 +23,14 @@
                 <span class="span_login">Navers</span>
             </div>
             <form>
-                <label>E-mail</label>
-                <input type="text" name="" id="input1" class="input" placeholder="E-mail" autofocus>
-                <label>Senha</label>
-                <input type="text" name="" id="input2" class="input" placeholder="Senha">
-                <button class="button_login">Entrar</button>
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="input1" class="input email_login" required placeholder="E-mail" autofocus>
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="input2" class="input password" required placeholder="Senha">
+                <button class="button_login button_entrar" onclick="Entrar()" type="button">Entrar</button>
             </form>
         </div>
     </section>
-    <script src="script.js"></script>
+    <script src="scripts/login.js"></script>
 </body>
 </html>

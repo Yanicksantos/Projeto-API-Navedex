@@ -6,8 +6,30 @@
 body{
     font-family: 'Courier New', Courier, monospace;
     background-color: #E5E5E5;
+    height: 100vh;
 }
-
+.alert{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-top: 25px;
+    display: none;
+}
+.alet_container{
+    padding: 5px;
+    max-width: 75%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 195, 195);
+}
+.alert_span{
+    color: red;
+    font-size: larger;
+    margin-left: 5px;
+    font-weight: 900;
+}
 .logincontainer{
     width: 100vw;
     height: 100vh;
