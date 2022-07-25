@@ -17,7 +17,7 @@ body{
 }
 .alet_container{
     padding: 5px;
-    max-width: 75%;
+    max-width: 50%;
     display: flex;
     margin: auto;
     justify-content: center;

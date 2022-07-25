@@ -31,15 +31,19 @@ async function login(email, senha){
                 password: senha
             })
         })
+
+        $button_entrar.innerHTML ="loading..."
         const data = await response.json()
         if(response.ok){
             console.log(data)
             location.href=`home.html?id=${data.id}`
+            
         }
         else{
             document.querySelector(".alert").style.display="block"
-            document.querySelector(".alert_span").textContent=`${data.message}`
+            document.querySelector(".alert_span").textContent=`E-mail ou senha inválida`
         } 
+        $button_entrar.innerHTML ="Entrar"
         
     } catch (error) {
         document.querySelector(".alert").style.display="block"
