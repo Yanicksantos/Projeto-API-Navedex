@@ -36,6 +36,10 @@ async function login(email, senha){
         const data = await response.json()
         if(response.ok){
             console.log(data)
+            localStorage.setItem("_usuario_", JSON.stringify({
+                id:data.id,
+                token:data.token
+            }))
             location.href=`home.html?id=${data.id}`
             
         }

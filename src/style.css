@@ -156,7 +156,7 @@ a{
 .start{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .adicionar_home, .title_navers{
@@ -173,10 +173,9 @@ a{
 .navers_home{
     display: flex;
     max-width: 100%;
-    justify-content: space-between;
 }
 .navers{
-    padding: 5px;
+    padding: 20px;
 }
 .img_home{
     position: relative;
