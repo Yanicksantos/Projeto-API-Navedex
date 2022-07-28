@@ -235,6 +235,10 @@ i:hover{
     cursor: pointer;
 }
 
+.delete{
+    margin: 5px;
+}
+
 
 
 /* ABERTURA DO MODAL*/
