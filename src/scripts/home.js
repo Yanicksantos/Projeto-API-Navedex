@@ -39,10 +39,10 @@ async function preencherNavers(){
             $view.forEach(element => {
                 element.addEventListener("click", (events) => {
                     console.log(events.target)
-                    const id = parseInt(events.target.id)
+                    let id = parseInt(events.target.id)
                     $excluir_modal.style.display="none"
                     $info_naver.style.display="none"
-                    preencherNaver(id)
+                    preencherNaverModal(id)
                     opennmodal()
                     $modal_details.style.display="flex"
                 })
@@ -65,7 +65,7 @@ async function preencherNavers(){
 
             document.onclick = function(event) {
                 if (event.target == $open_modal) {
-                $open_modal.style.display = "none";
+                    $open_modal.style.display = "none";
                 }
             }
 
@@ -73,14 +73,17 @@ async function preencherNavers(){
 
             $delete.forEach(del => {
                 del.addEventListener("click", (events) => {
-                    /*console.log(events.target)
-                   */
+                    console.log(events.target.classList.contains("del_modal"))
+                    if(events.target.classList.contains("del_modal") == false){
+                        $button_exluir.id=`${navers[(parseInt(events.target.id))-10].id}`
+                    }
                     console.log(events.target)
                     $exit_modal.style.display="none"
                     $modal_details.style.display="none"
                     $info_naver.style.display="none"
                     opennmodal()
                     $excluir_modal.style.display="block"
+
                 })
             });
 
@@ -89,19 +92,32 @@ async function preencherNavers(){
 
             $button_exluir.addEventListener("click", (event)=> {
                 console.log(event.target.id)
-                if(event.target.classList.contains("del_modal")){
-                    console.log(event.target.id)
-                 }
-                $modal_details.style.display="none"
-                $excluir_modal.style.display="none"
-                opennmodal()
-                $info_naver.style.display="block"
-                $exit_modal.style.display="block"
+                // Excluir e atualizar (mandando para home)
+                fetch(api.url+`/${event.target.id}`,{
+                    method:"DELETE",
+                    headers:{
+                        'Authorization': 'Bearer ' + usuario.token
+                    }
+                })
+                .then(delete_response => delete_response.json())
+                .then(data_delete => {
+                    console.log(data_delete)
+                    if(data_delete.deleted){
+                        $modal_details.style.display="none"
+                        $excluir_modal.style.display="none"
+                        opennmodal()
+                        $info_naver.style.display="block"
+                        $exit_modal.style.display="block"
+                        
+                    }
+                })  
             })
 
 
             $cancelar.addEventListener("click", ()=> $open_modal.style.display="none")
-            $exit_modal.addEventListener("click", ()=> $open_modal.style.display="none")
+            $exit_modal.addEventListener("click", ()=> {
+                $open_modal.style.display="none"
+            })
             function opennmodal(){
                 document.querySelector(".open_modal").style.display="flex"
                 controle_modal = true
@@ -116,14 +132,14 @@ async function preencherNavers(){
                 location.href=`editar.html?id=${id}`;
             }
 
-            function preencherNaver(id){
-                document.querySelector(".name_modal").textContent=`${navers[id].name}`
-                document.querySelector(".profission_modal").textContent=`${navers[id].job_role}`
-                document.querySelector(".idade_modal").textContent=`${navers[id].birthdate}`
-                document.querySelector(".tempo_empresa_modal").textContent=`${navers[id].admission_date}`
-                document.querySelector("#Projet").textContent=`${navers[id].project}`
-                $button_exluir.id=`${navers[id].id}`
-                document.querySelector(".put_modal").id=`${navers[id].id}`
+            function preencherNaverModal(id_){
+                document.querySelector(".name_modal").textContent=`${navers[id_].name}`
+                document.querySelector(".profission_modal").textContent=`${navers[id_].job_role}`
+                document.querySelector(".idade_modal").textContent=`${navers[id_].birthdate}`
+                document.querySelector(".tempo_empresa_modal").textContent=`${navers[id_].admission_date}`
+                document.querySelector("#Projet").textContent=`${navers[id_].project}`
+                document.querySelector(".put_modal").id=`${navers[id_].id}`
+                $button_exluir.id=`${navers[id_].id}`
             }
         }else{
             alert("Ocorreu algum erro! Tente reiniciar...")
