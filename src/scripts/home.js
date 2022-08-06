@@ -22,7 +22,7 @@ async function preencherNavers(){
         console.log(navers)
         if(response.ok){
             for(let i=0; i<navers.length; i++){
-                $navers_home.innerHTML+=`<div class="navers"><div class="img_home"><div class="view_details"><div class="view" id="${i}">Ver mais...</div></div><img class="img_home" src="https://thumbs.dreamstime.com/b/desenho-animado-do-perfil-executivo-funcion%C3%A1rio-de-escrit%C3%B3rio-da-empresa-ilustra%C3%A7%C3%A3o-vetorial-oper%C3%A1ria-avatar-no-estilo-224793366.jpg" alt=""></div><div class="info_navers"><div class="name">${navers[i].name}</div><div class="profission">${navers[i].job_role}</div></div><div class="options_home"><i class="fa-solid fa-trash delete" id="${i+10}"></i><i class="fa-solid fa-pen put" id="${i-10}"></i></div></div>`
+                $navers_home.innerHTML+=`<div class="navers"><div class="img_home"><div class="view_details"><div class="view" id="${i}">Ver mais...</div></div><img class="img_home" src="https://thumbs.dreamstime.com/b/desenho-animado-do-perfil-executivo-funcion%C3%A1rio-de-escrit%C3%B3rio-da-empresa-ilustra%C3%A7%C3%A3o-vetorial-oper%C3%A1ria-avatar-no-estilo-224793366.jpg" alt=""></div><div class="info_navers"><div class="name">${navers[i].name}</div><div class="profission">${navers[i].job_role}</div></div><div class="options_home"><i class="fa-solid fa-trash delete" id="${navers[i].id}"></i><i class="fa-solid fa-pen put" id="${navers[i].id}"></i></div></div>`
             }
             const $view = document.querySelectorAll(".view")
             const $exit_modal =document.querySelector("#exit_modal")
@@ -52,11 +52,8 @@ async function preencherNavers(){
             $put.forEach(put => {
                 put.addEventListener("click", (events) => {
                     console.log(events.target)
-                    if(events.target.classList.contains("put_modal")){
-                       editar(events.target.id)
-                    }else{
-                        editar(navers[(parseInt(events.target.id))+10].id)
-                    }
+                    console.log(events.target.id)
+                    editar(events.target.id)
         
                 })
             });
@@ -74,9 +71,7 @@ async function preencherNavers(){
             $delete.forEach(del => {
                 del.addEventListener("click", (events) => {
                     console.log(events.target.classList.contains("del_modal"))
-                    if(events.target.classList.contains("del_modal") == false){
-                        $button_exluir.id=`${navers[(parseInt(events.target.id))-10].id}`
-                    }
+                    $button_exluir.id=`${events.target.id}`
                     console.log(events.target)
                     $exit_modal.style.display="none"
                     $modal_details.style.display="none"
@@ -110,7 +105,7 @@ async function preencherNavers(){
                         $exit_modal.style.display="block"
                         
                     }
-                })  
+                })
             })
 
 
@@ -139,7 +134,7 @@ async function preencherNavers(){
                 document.querySelector(".tempo_empresa_modal").textContent=`${navers[id_].admission_date}`
                 document.querySelector("#Projet").textContent=`${navers[id_].project}`
                 document.querySelector(".put_modal").id=`${navers[id_].id}`
-                $button_exluir.id=`${navers[id_].id}`
+                document.querySelector(".del_modal").id=`${navers[id_].id}`
             }
         }else{
             alert("Ocorreu algum erro! Tente reiniciar...")
